@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex; /*deixar o botão ao lado do título*/ /**/
+    border-bottom: 16px solid #341f97;  /*borda na parte inferior do header*/
+    justify-content: center;
+    text-transform: uppercase; /*deixar em maiúsculo*/
+    font-style: italic;
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0; /*espaçamentno interno*/
+    text-align: center;
+    display: none; /*retira o form da tela*/
+}
+
+input, button {
+    padding: 8px;
+}
+
+form h2{
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: #009432;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;    
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    display: flex; /*Para que os elementos dentro do ul fiquem um do lado do outro*/
+    flex-wrap: wrap; /* quando chegar ao limite, ocupar toda a tela, iniciar uma nova linha*/
+}
+
+ul li {
+    max-width: 25%; /*vao ter 4 itens em uma linha, então o max-width tem que ser 25%(100% /4)*/
+    list-style: none; /*Tirar os pontos, que são referentes a lista li*/
+    position: relative; 
+    max-height: 240px; /*limitar a altura do li */
+    overflow-y: hidden; /*corta a imagem, todo o conteudo que ultrapassa o max-]heigth vai sumir*/
+}
+
+ul li img {
+    width: 100%; /*as imagens tem que ocupar 100% do site*/
+}
+
+
+.overlay-imagem-link {
+    padding: 16px; /*espaçamento interno*/
+    background-color: rgba(0, 0, 0, 0.7); /*70% de opacidade, 30% de transparencia*/
+    position: absolute; /*posicionar o elemento no canto inferior do li, para que o elemento nao vaze no layout o elemento pai vai ter o position relative*/
+    bottom: 0;
+    left: 0; /*vai estar na extremindade*/
+    width: 100%;
+    opacity: 0;
+    transition: all ease .5s; /*elemento de transicao*/
+}
+
+.overlay-imagem-link a { 
+    color: #fff; /*mudar a cor do link*/
+    text-decoration: none; /*remove o sublinhado*/
+
+}
+
+ul li:hover .overlay-imagem-link { /*quando estiver usando o hover o elemento passara a ter opacidade 1*/
+    opacity: 1;
+
+}
+/**/
